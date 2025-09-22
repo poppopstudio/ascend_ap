@@ -1,0 +1,95 @@
+<?php
+
+namespace Drupal\ascend_ap\Entity\Handler;
+
+use Drupal\ascend_audit\Entity\Handler\AuditAccess;
+use Drupal\entity\EntityAccessControlHandler;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Access\AccessResult;
+
+class ApAccess extends EntityAccessControlHandler {
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function checkAccess(EntityInterface $entity, $operation, AccountInterface $account) {
+
+    // Check operations that require school-based access control
+    if (in_array($operation, ['view', 'update'])) {
+
+      // Global permissions first.
+      if ($account->hasPermission($operation . ' ap')) {
+        return AccessResult::allowed()->cachePerPermissions();
+      }
+
+      // Check if user is an auditor.
+      if (in_array('auditor', $account->getRoles())) {
+
+        // Check (below) if user has working access to the school.
+        $auditor_linked = AuditAccess::checkAuditorSchoolLink($entity, $account);
+
+        if (!$auditor_linked) {
+          return AccessResult::forbidden()
+            ->cachePerPermissions()
+            ->cachePerUser()
+            ->addCacheableDependency($entity);
+            // may need to change if a school is saved?
+        }
+
+        // Add a developer note for these overloaded perms.
+
+        // For view operation, check "view own" permission.
+        if ($operation === 'view' && $account->hasPermission('view own ap')) {
+          return AccessResult::allowed()
+            ->cachePerPermissions()
+            ->cachePerUser()
+            ->addCacheableDependency($entity);
+        }
+
+        // For update operation, check "update own" permission.
+        if ($operation === 'update' && $account->hasPermission('update own ap')) {
+          return AccessResult::allowed()
+            ->cachePerPermissions()
+            ->cachePerUser()
+            ->addCacheableDependency($entity);
+        }
+      }
+
+      return AccessResult::forbidden()->cachePerPermissions();
+    }
+
+    // For all other operations, use parent EntityAccessControlHandler logic
+    return parent::checkAccess($entity, $operation, $account);
+  }
+
+  //
+  // This function would be identical if left, should we call the audit version from the above functions??
+  //
+
+  /**
+   * Check if auditor is linked to the school on the audit entity.
+   */
+  // protected function checkAuditorSchoolLink(EntityInterface $entity, AccountInterface $account) {
+
+  //   // Get the school ID from the audit entity.
+  //   $audit_school_id = $entity->get('school')->target_id;
+
+  //   if (!$audit_school_id) {
+  //     return FALSE; // No school set on audit, deny access.
+  //   }
+
+  //   // Load the audit's school.
+  //   $audit_school = \Drupal::entityTypeManager()
+  //     ->getStorage('school')
+  //     ->load($audit_school_id);
+
+  //   if (empty($audit_school)) {
+  //     return FALSE; // No school set, deny access.
+  //   }
+
+  //   $school_auditor = $audit_school->get('ascend_sch_auditor')->target_id;
+  //   return ($school_auditor == $account->id());
+  // }
+  
+}

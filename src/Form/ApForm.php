@@ -57,8 +57,7 @@ class ApForm extends ContentEntityForm {
       '#wrapper_attributes' => ['class' => ['entity-meta__author']],
     ];
 
-
-    // Get the category from the audit entity.
+    // Get the category from the ap entity.
     $details_category = $ap->get('category')->target_id;
 
     // IMPORTANT: if not set, all ensuing views are redundant.
@@ -66,19 +65,21 @@ class ApForm extends ContentEntityForm {
       return $form;
     }
 
+    // TS not set on focus areas so ignore
+
     // Add the related TStandards view into the sidebar.
-    $form['ap_standards'] = [
-      '#type' => 'details',
-      '#group' => 'advanced',
-      '#weight' => -20,
-      '#title' => $this->t("Teachers' Standards"),
-      '#open' => TRUE,
-    ];
-    $form['ap_standards']['details'] = [
-      '#type' => 'container',
-      'view' => views_embed_view('audit_standards', 'embed_1', $details_category),
-      '#wrapper_attributes' => ['class' => ['entity-meta__title']], // Stolen but just works.
-    ];
+    // $form['ap_standards'] = [
+    //   '#type' => 'details',
+    //   '#group' => 'advanced',
+    //   '#weight' => -20,
+    //   '#title' => $this->t("Teachers' Standards"),
+    //   '#open' => TRUE,
+    // ];
+    // $form['ap_standards']['details'] = [
+    //   '#type' => 'container',
+    //   'view' => views_embed_view('audit_standards', 'embed_1', $details_category),
+    //   '#wrapper_attributes' => ['class' => ['entity-meta__title']], // Stolen but just works.
+    // ];
 
 
     // Add historic action plans here

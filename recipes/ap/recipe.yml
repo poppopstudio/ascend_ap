@@ -1,0 +1,16 @@
+name: 'Ascend AP setup'
+description: 'Ascend AP setup recipe - installs modules and sets up config'
+type: 'Content type'
+recipes:
+  # Can't depend on other recipes outside of this dir or core!
+install:
+  - ascend_ap
+config:
+  strict: true
+  import:
+    ascend_ap: '*'
+  actions:
+    form_mode_manager.links:
+      simpleConfigUpdate:
+        local_tasks.ap:
+          position: primary
