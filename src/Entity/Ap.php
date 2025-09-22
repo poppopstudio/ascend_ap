@@ -33,8 +33,8 @@ use Drupal\user\EntityOwnerTrait;
  *       "revision" = \Drupal\Core\Entity\Routing\RevisionHtmlRouteProvider::class,
  *     },
  *     "form" = {
- *       "default" = "Drupal\ascend_ap\Form\AuditForm",
- *       "edit" = "Drupal\ascend_ap\Form\AuditForm",
+ *       "default" = "Drupal\ascend_ap\Form\ApForm",
+ *       "edit" = "Drupal\ascend_ap\Form\ApForm",
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm",
  *       "revision-delete" = \Drupal\Core\Entity\Form\RevisionDeleteForm::class,
  *       "revision-revert" = \Drupal\Core\Entity\Form\RevisionRevertForm::class,

@@ -4,6 +4,7 @@ type: 'Content type'
 recipes:
   # Can't depend on other recipes outside of this dir or core!
 install:
+  - comment
   - ascend_ap
 config:
   strict: true
