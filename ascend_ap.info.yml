@@ -24,7 +24,7 @@ config_devel:
   - comment.settings
   - core.base_field_override.ap.ap.category
   - core.entity_form_display.ap.ap.default
-  - core.entity_view_display.ap.ap.defaul
+  - core.entity_view_display.ap.ap.default
   - field.field.ap.ap.ascend_ap_ap
   - field.field.ap.ap.ascend_ap_fas
   - field.field.ap.ap.ascend_ap_mfs
