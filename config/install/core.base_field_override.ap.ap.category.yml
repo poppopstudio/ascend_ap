@@ -15,7 +15,7 @@ field_name: category
 entity_type: ap
 bundle: ap
 label: Category
-description: 'The factor for this action plan.'
+description: 'The focus area for this action plan.'
 required: true
 translatable: true
 default_value: {  }

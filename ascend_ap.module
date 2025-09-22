@@ -53,7 +53,7 @@ function ascend_ap_form_alter(&$form, FormStateInterface $form_state, $form_id) 
 
 /**
  * These two functions were required in order to add compatibility with
- *  field_group module. This also necessitated the audit.html.twig template.
+ *  field_group module. This also necessitated the ap.html.twig template.
  *  https://www.drupal.org/project/field_group/issues/2859858
  */
 

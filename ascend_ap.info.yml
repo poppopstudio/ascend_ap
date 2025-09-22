@@ -21,3 +21,13 @@ dependencies:
   - views_relationship_condition:views_relationship_condition
 
 config_devel:
+  - comment.settings
+  - core.base_field_override.ap.ap.category
+  - core.entity_form_display.ap.ap.default
+  - core.entity_view_display.ap.ap.defaul
+  - field.field.ap.ap.ascend_ap_ap
+  - field.field.ap.ap.ascend_ap_fas
+  - field.field.ap.ap.ascend_ap_mfs
+  - field.storage.ap.ascend_ap_ap
+  - field.storage.ap.ascend_ap_fas
+  - field.storage.ap.ascend_ap_mfs

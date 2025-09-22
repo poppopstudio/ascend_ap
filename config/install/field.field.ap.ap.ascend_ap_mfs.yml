@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.ap.ascend_ap_mfs
+    - filter.format.basic_html
+  module:
+    - ascend_ap
+    - text
+id: ap.ap.ascend_ap_mfs
+field_name: ascend_ap_mfs
+entity_type: ap
+bundle: ap
+label: 'Moving forward summary'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long

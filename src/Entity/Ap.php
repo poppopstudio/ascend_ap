@@ -229,7 +229,7 @@ class Ap extends EditorialContentEntityBase implements ApInterface {
       ])
       ->setDisplayOptions('view', array(
         'label' => 'inline',
-        'type' => 'label',
+        'type' => 'audit_year_formatter',
         'weight' => 0,
       ))
       ->setDisplayOptions('form', array(

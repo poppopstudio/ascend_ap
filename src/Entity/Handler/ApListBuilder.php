@@ -6,7 +6,7 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityListBuilder;
 
 /**
- * Provides the list builder handler for the Audit entity.
+ * Provides the list builder handler for the AP entity.
  */
 class ApListBuilder extends EntityListBuilder {
 

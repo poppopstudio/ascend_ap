@@ -92,14 +92,14 @@ class ApForm extends ContentEntityForm {
 
       $category_info = $category_term->get('ascend_info')->value ?? NULL;
 
-      $form['audit_cat_info'] = [
+      $form['ap_cat_info'] = [
         '#type' => 'details',
         '#group' => 'advanced',
         '#weight' => -15,
         '#title' => $this->t('Category info'),
         '#open' => TRUE,
       ];
-      $form['audit_cat_info']['details'] = [
+      $form['ap_cat_info']['details'] = [
         '#type' => 'item',
         '#markup' => $category_info ?? $this->t('No information currently stored for this category.'),
         '#attributes' => ['class' => ['entity-meta__title']],

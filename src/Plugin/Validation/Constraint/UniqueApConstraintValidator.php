@@ -9,7 +9,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 
 /**
- * Validates the UniqueAudit constraint.
+ * Validates the UniqueAp constraint.
  */
 class UniqueApConstraintValidator extends ConstraintValidator implements ContainerInjectionInterface {
 

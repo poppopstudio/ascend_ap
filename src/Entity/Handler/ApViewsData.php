@@ -27,7 +27,7 @@ class ApViewsData extends EntityViewsData {
       'allow empty' => TRUE,
     ];
 
-    // Add the relationship for "Audit has category".
+    // Add the relationship for "AP has category".
     $data['ap']['category']['relationship'] = [
       'title' => $this->t('Action plan has category'), // is this right??
       'help' => $this->t('Category referenced by action plan.'),
