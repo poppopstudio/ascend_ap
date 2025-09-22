@@ -1,0 +1,6 @@
+entity.ap.add:
+  title: Add Action plan
+  route_name: entity.ap.add_form
+  weight: 15
+  appears_on:
+    - entity.ap.collection

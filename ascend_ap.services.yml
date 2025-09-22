@@ -1,0 +1,4 @@
+services:
+  Drupal\ascend_ap\Hook\ApHooks:
+    class: Drupal\ascend_ap\Hook\ApHooks
+    autowire: true

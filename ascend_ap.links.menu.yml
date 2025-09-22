@@ -1,0 +1,5 @@
+entity.ap.field_ui:
+  title: Action plan settings
+  description: Create and manage fields, forms, and display settings for action plans.
+  route_name: entity.ap.field_ui_base
+  parent: system.admin_structure

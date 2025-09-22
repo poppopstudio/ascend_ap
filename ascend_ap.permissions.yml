@@ -1,0 +1,6 @@
+administer ap entities:
+  title: Administer Action plan entities
+  description: Modify config & fields for Action plan entities.
+
+view own ap:
+  title: View own action plans
