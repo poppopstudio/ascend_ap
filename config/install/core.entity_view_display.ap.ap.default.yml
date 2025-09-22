@@ -8,9 +8,7 @@ dependencies:
   module:
     - ascend_ap
     - ascend_audit
-    - cshs
     - text
-    - user
 id: ap.ap.default
 targetEntityType: ap
 bundle: ap
@@ -21,48 +19,27 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 5
     region: content
   ascend_ap_fas:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 3
     region: content
   ascend_ap_mfs:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 4
     region: content
   category:
-    type: cshs_full_hierarchy
+    type: entity_reference_label
     label: inline
     settings:
-      linked: false
-      reverse: false
-      separator: ' » '
-    third_party_settings: {  }
-    weight: -10
-    region: content
-  created:
-    type: timestamp
-    label: inline
-    settings:
-      date_format: medium
-      custom_date_format: ''
-      timezone: ''
-      tooltip:
-        date_format: long
-        custom_date_format: ''
-      time_diff:
-        enabled: false
-        future_format: '@interval hence'
-        past_format: '@interval ago'
-        granularity: 2
-        refresh: 60
+      link: false
     third_party_settings: {  }
     weight: 0
     region: content
@@ -72,21 +49,16 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 0
-    region: content
-  uid:
-    type: author
-    label: inline
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   year:
     type: audit_year_formatter
     label: inline
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 2
     region: content
 hidden:
   changed: true
+  created: true
+  uid: true
