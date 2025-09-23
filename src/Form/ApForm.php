@@ -64,7 +64,7 @@ class ApForm extends ContentEntityForm {
     if (!isset($details_category)) {
       return $form;
     }
-    
+
 
     // Add the historic APs view into the sidebar.
     $form['ap_historic'] = [
@@ -74,7 +74,7 @@ class ApForm extends ContentEntityForm {
       '#title' => $this->t("Historic action plans"),
       '#open' => TRUE,
     ];
-    $form['audit_historic']['details'] = [
+    $form['ap_historic']['details'] = [
       '#type' => 'container',
       'view' => views_embed_view('ap_historic', 'embed_1', $details_category),
       '#wrapper_attributes' => ['class' => ['entity-meta__title']],
