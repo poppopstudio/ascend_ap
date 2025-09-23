@@ -22,16 +22,21 @@ dependencies:
 
 config_devel:
   - comment.settings
+  - comment.type.ap_comment
   - core.base_field_override.ap.ap.category
   - core.entity_form_display.ap.ap.default
   - core.entity_form_display.ap.ap.auditor
+  - core.entity_form_display.comment.ap_comment.default
   - core.entity_form_mode.ap.auditor
   - core.entity_view_display.ap.ap.default
+  - core.entity_view_display.comment.ap_comment.default
   - field.field.ap.ap.ascend_ap_ap
   - field.field.ap.ap.ascend_ap_fas
   - field.field.ap.ap.ascend_ap_mfs
+  - field.field.comment.ap_comment.ascend_comment_body
   - field.storage.ap.ascend_ap_ap
   - field.storage.ap.ascend_ap_fas
   - field.storage.ap.ascend_ap_mfs
+  - field.storage.comment.ascend_comment_body
   - views.view.ap_historic
   - views.view.action_plans
