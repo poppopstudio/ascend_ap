@@ -24,6 +24,8 @@ config_devel:
   - comment.settings
   - core.base_field_override.ap.ap.category
   - core.entity_form_display.ap.ap.default
+  - core.entity_form_display.ap.ap.auditor
+  - core.entity_form_mode.ap.auditor
   - core.entity_view_display.ap.ap.default
   - field.field.ap.ap.ascend_ap_ap
   - field.field.ap.ap.ascend_ap_fas
@@ -32,3 +34,4 @@ config_devel:
   - field.storage.ap.ascend_ap_fas
   - field.storage.ap.ascend_ap_mfs
   - views.view.ap_historic
+  - views.view.action_plans

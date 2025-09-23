@@ -1,0 +1,104 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.ap.auditor
+    - field.field.ap.ap.ascend_ap_ap
+    - field.field.ap.ap.ascend_ap_fas
+    - field.field.ap.ap.ascend_ap_mfs
+  module:
+    - ascend_ap
+    - field_group
+    - readonly_field_widget
+    - text
+third_party_settings:
+  field_group:
+    group_authoring_information:
+      children:
+        - uid
+        - created
+      label: 'Authoring information'
+      region: hidden
+      parent_name: ''
+      weight: 8
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        open: true
+        description: ''
+        required_fields: true
+        weight: 0
+id: ap.ap.auditor
+targetEntityType: ap
+bundle: ap
+mode: auditor
+content:
+  ascend_ap_ap:
+    type: text_textarea
+    weight: 5
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  ascend_ap_fas:
+    type: text_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  ascend_ap_mfs:
+    type: text_textarea
+    weight: 4
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  category:
+    type: readonly_field_widget
+    weight: 0
+    region: content
+    settings:
+      label: inline
+      formatter_type: entity_reference_label
+      formatter_settings:
+        entity_reference_label:
+          link: false
+      show_description: false
+      error_validation: false
+    third_party_settings: {  }
+  school:
+    type: readonly_field_widget
+    weight: 1
+    region: content
+    settings:
+      label: inline
+      formatter_type: entity_reference_label
+      formatter_settings:
+        entity_reference_label:
+          link: false
+      show_description: false
+      error_validation: false
+    third_party_settings: {  }
+  year:
+    type: readonly_field_widget
+    weight: 2
+    region: content
+    settings:
+      label: inline
+      formatter_type: audit_year_formatter
+      formatter_settings: {  }
+      show_description: false
+      error_validation: false
+    third_party_settings: {  }
+hidden:
+  changed: true
+  created: true
+  status: true
+  uid: true
