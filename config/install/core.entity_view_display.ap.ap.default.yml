@@ -2,12 +2,15 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.ap_comment.default
     - field.field.ap.ap.ascend_ap_ap
+    - field.field.ap.ap.ascend_ap_comments
     - field.field.ap.ap.ascend_ap_fas
     - field.field.ap.ap.ascend_ap_mfs
   module:
     - ascend_ap
     - ascend_audit
+    - comment
     - text
 id: ap.ap.default
 targetEntityType: ap
@@ -20,6 +23,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 5
+    region: content
+  ascend_ap_comments:
+    type: comment_default
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 6
     region: content
   ascend_ap_fas:
     type: text_default

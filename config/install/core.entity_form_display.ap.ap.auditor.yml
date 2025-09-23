@@ -4,6 +4,7 @@ dependencies:
   config:
     - core.entity_form_mode.ap.auditor
     - field.field.ap.ap.ascend_ap_ap
+    - field.field.ap.ap.ascend_ap_comments
     - field.field.ap.ap.ascend_ap_fas
     - field.field.ap.ap.ascend_ap_mfs
   module:
@@ -101,6 +102,7 @@ content:
       error_validation: false
     third_party_settings: {  }
 hidden:
+  ascend_ap_comments: true
   changed: true
   created: true
   status: true

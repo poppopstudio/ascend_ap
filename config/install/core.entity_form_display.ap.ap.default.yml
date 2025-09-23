@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.ap.ap.ascend_ap_ap
+    - field.field.ap.ap.ascend_ap_comments
     - field.field.ap.ap.ascend_ap_fas
     - field.field.ap.ap.ascend_ap_mfs
   module:
@@ -113,4 +114,5 @@ content:
       placeholder: ''
     third_party_settings: {  }
 hidden:
+  ascend_ap_comments: true
   changed: true
