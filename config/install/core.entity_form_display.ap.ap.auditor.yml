@@ -66,12 +66,15 @@ content:
     region: content
     settings:
       label: inline
-      formatter_type: entity_reference_label
+      formatter_type: cshs_flexible_hierarchy
       formatter_settings:
-        entity_reference_label:
-          link: false
+        cshs_flexible_hierarchy:
+          format: '[term:parent:description]<br>[term:description]'
+          clear: '1'
+          linked: 0
+          reverse: 0
       show_description: false
-      error_validation: false
+      error_validation: true
     third_party_settings: {  }
   school:
     type: readonly_field_widget
