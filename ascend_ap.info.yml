@@ -31,3 +31,4 @@ config_devel:
   - field.storage.ap.ascend_ap_ap
   - field.storage.ap.ascend_ap_fas
   - field.storage.ap.ascend_ap_mfs
+  - views.view.ap_historic

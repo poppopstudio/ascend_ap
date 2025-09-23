@@ -64,22 +64,21 @@ class ApForm extends ContentEntityForm {
     if (!isset($details_category)) {
       return $form;
     }
-
-    // Add historic action plans here
+    
 
     // Add the historic APs view into the sidebar.
-    // $form['ap_historic'] = [
-    //   '#type' => 'details',
-    //   '#group' => 'advanced',
-    //   '#weight' => -5,
-    //   '#title' => $this->t("Historic action plans"),
-    //   '#open' => TRUE,
-    // ];
-    // $form['audit_historic']['details'] = [
-    //   '#type' => 'container',
-    //   'view' => views_embed_view('ap_historic', 'embed_1', $details_category),
-    //   '#wrapper_attributes' => ['class' => ['entity-meta__title']],
-    // ];
+    $form['ap_historic'] = [
+      '#type' => 'details',
+      '#group' => 'advanced',
+      '#weight' => -5,
+      '#title' => $this->t("Historic action plans"),
+      '#open' => TRUE,
+    ];
+    $form['audit_historic']['details'] = [
+      '#type' => 'container',
+      'view' => views_embed_view('ap_historic', 'embed_1', $details_category),
+      '#wrapper_attributes' => ['class' => ['entity-meta__title']],
+    ];
 
 
     // Check the resource kit is installed - does this need DI?
