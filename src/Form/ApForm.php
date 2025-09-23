@@ -57,6 +57,7 @@ class ApForm extends ContentEntityForm {
       '#wrapper_attributes' => ['class' => ['entity-meta__author']],
     ];
 
+    
     // Get the category from the ap entity.
     $details_category = $ap->get('category')->target_id;
 
@@ -64,7 +65,6 @@ class ApForm extends ContentEntityForm {
     if (!isset($details_category)) {
       return $form;
     }
-
 
     // Add the historic APs view into the sidebar.
     $form['ap_historic'] = [
