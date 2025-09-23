@@ -57,7 +57,7 @@ class ApForm extends ContentEntityForm {
       '#wrapper_attributes' => ['class' => ['entity-meta__author']],
     ];
 
-    
+
     // Get the category from the ap entity.
     $details_category = $ap->get('category')->target_id;
 
@@ -72,7 +72,7 @@ class ApForm extends ContentEntityForm {
       '#group' => 'advanced',
       '#weight' => -5,
       '#title' => $this->t("Historic action plans"),
-      '#open' => TRUE,
+      '#open' => FALSE,
     ];
     $form['ap_historic']['details'] = [
       '#type' => 'container',
