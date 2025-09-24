@@ -788,7 +788,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          text: edit
+          text: View
           output_url_as_text: false
           absolute: false
         form_mode_edit_link:
@@ -836,13 +836,13 @@ display:
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          form_mode: default
-          text: 'edit*'
+          form_mode: ap.auditor
+          text: Edit
           output_url_as_text: 0
           absolute: 0
       pager:
