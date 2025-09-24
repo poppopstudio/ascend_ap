@@ -66,6 +66,15 @@ class ApForm extends ContentEntityForm {
       return $form;
     }
 
+    // Check if current user has 'auditor' role
+    $current_user = $this->currentUser();
+    $is_auditor = in_array('auditor', $current_user->getRoles());
+
+    // Don't bother with extra work to show sidebar info if not auditor.
+    if (!$is_auditor) {
+      return $form;
+    }
+
     // Add the historic APs view into the sidebar.
     $form['ap_historic'] = [
       '#type' => 'details',
@@ -73,6 +82,7 @@ class ApForm extends ContentEntityForm {
       '#weight' => -5,
       '#title' => $this->t("Historic action plans"),
       '#open' => FALSE,
+      // '#access' => $is_auditor, // Alt. individual access approach.
     ];
     $form['ap_historic']['details'] = [
       '#type' => 'container',
