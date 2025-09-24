@@ -75,6 +75,24 @@ class ApForm extends ContentEntityForm {
       return $form;
     }
 
+
+    // Add audit info to sidebar.
+    $form['ap_audit_list'] = [
+      '#type' => 'details',
+      '#group' => 'advanced',
+      '#weight' => -10,
+      '#title' => $this->t("Audit items"),
+      '#open' => TRUE,
+    ];
+    $form['ap_audit_list']['details'] = [
+      '#type' => 'container',
+      // Could we be passing relevant year in here to make more relevant? (Y)
+      // 'view' => views_embed_view('ap_audit_list', 'embed_1', $details_category),
+      'view' => views_embed_view('duplicate_of_ap_audit_list', 'embed_1', $details_category),
+      '#wrapper_attributes' => ['class' => ['entity-meta__title']],
+    ];
+
+
     // Add the historic APs view into the sidebar.
     $form['ap_historic'] = [
       '#type' => 'details',
@@ -104,9 +122,9 @@ class ApForm extends ContentEntityForm {
       $form['ap_cat_info'] = [
         '#type' => 'details',
         '#group' => 'advanced',
-        '#weight' => -15,
+        '#weight' => 0,
         '#title' => $this->t('Category info'),
-        '#open' => TRUE,
+        '#open' => FALSE,
       ];
       $form['ap_cat_info']['details'] = [
         '#type' => 'item',
