@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ascend_ap
+    - comment
+id: ap.ascend_ap_comments
+field_name: ascend_ap_comments
+entity_type: ap
+type: comment
+settings:
+  comment_type: ap_comment
+module: comment
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

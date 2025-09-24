@@ -31,10 +31,12 @@ config_devel:
   - core.entity_view_display.ap.ap.default
   - core.entity_view_display.comment.ap_comment.default
   - field.field.ap.ap.ascend_ap_ap
+  - field.field.ap.ap.ascend_ap_comments
   - field.field.ap.ap.ascend_ap_fas
   - field.field.ap.ap.ascend_ap_mfs
   - field.field.comment.ap_comment.ascend_comment_body
   - field.storage.ap.ascend_ap_ap
+  - field.storage.ap.ascend_ap_comments
   - field.storage.ap.ascend_ap_fas
   - field.storage.ap.ascend_ap_mfs
   - field.storage.comment.ascend_comment_body

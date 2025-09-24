@@ -31,7 +31,7 @@ content:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-    weight: 6
+    weight: 7
     region: content
   ascend_ap_fas:
     type: text_default
