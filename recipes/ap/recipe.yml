@@ -22,3 +22,7 @@ config:
         - 'use ap.auditor form mode'
         - 'view own ap'
         - 'view own unpublished ap'
+        - 'access comments'
+        - 'edit own comments'
+        - 'post comments'
+        - 'skip comment approval'

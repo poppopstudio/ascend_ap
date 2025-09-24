@@ -38,5 +38,8 @@ config_devel:
   - field.storage.ap.ascend_ap_fas
   - field.storage.ap.ascend_ap_mfs
   - field.storage.comment.ascend_comment_body
+  - system.action.user_add_role_action.adviser
+  - system.action.user_remove_role_action.adviser
+  - user.role.adviser
   - views.view.ap_historic
   - views.view.action_plans
