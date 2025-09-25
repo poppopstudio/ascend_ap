@@ -1,8 +1,22 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.basic_html
+  module:
+    - ascend_ap
+    - ascend_school
+    - comment
+    - filter
 id: adviser
 label: Adviser
 weight: 7
 is_admin: null
-permissions: {  }
+permissions:
+  - 'access comments'
+  - 'edit own comments'
+  - 'post comments'
+  - 'skip comment approval'
+  - 'use text format basic_html'
+  - 'view ap'
+  - 'view school'
