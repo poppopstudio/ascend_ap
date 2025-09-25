@@ -490,9 +490,31 @@ display:
           default_row_class: false
           columns:
             name: name
+            description__value: description__value
+            view_ap: view_ap
+            form_mode_edit_link: view_ap
           default: '-1'
           info:
             name:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            description__value:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            view_ap:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            form_mode_edit_link:
               sortable: false
               default_sort_order: asc
               align: ''

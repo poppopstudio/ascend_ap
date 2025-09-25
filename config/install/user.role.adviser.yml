@@ -3,14 +3,18 @@ status: true
 dependencies:
   module:
     - ascend_ap
+    - ascend_school
     - comment
     - profile
+    - system
+    - toolbar
 id: adviser
 label: Adviser
 weight: 7
 is_admin: null
 permissions:
   - 'access comments'
+  - 'access toolbar'
   - 'create adviser profile'
   - 'edit own comments'
   - 'post comments'
@@ -18,3 +22,5 @@ permissions:
   - 'update own adviser profile'
   - 'view ap'
   - 'view own adviser profile'
+  - 'view school'
+  - 'view the administration theme'
