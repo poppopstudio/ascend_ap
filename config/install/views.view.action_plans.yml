@@ -4,6 +4,7 @@ dependencies:
   config:
     - system.menu.main
     - taxonomy.vocabulary.category
+    - user.role.adviser
     - user.role.auditor
   module:
     - ascend_ap
@@ -311,6 +312,7 @@ display:
         options:
           role:
             auditor: auditor
+            adviser: adviser
       cache:
         type: tag
         options: {  }
