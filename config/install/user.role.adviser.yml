@@ -1,22 +1,20 @@
 langcode: en
 status: true
 dependencies:
-  config:
-    - filter.format.basic_html
   module:
     - ascend_ap
-    - ascend_school
     - comment
-    - filter
+    - profile
 id: adviser
 label: Adviser
 weight: 7
 is_admin: null
 permissions:
   - 'access comments'
+  - 'create adviser profile'
   - 'edit own comments'
   - 'post comments'
   - 'skip comment approval'
-  - 'use text format basic_html'
+  - 'update own adviser profile'
   - 'view ap'
-  - 'view school'
+  - 'view own adviser profile'

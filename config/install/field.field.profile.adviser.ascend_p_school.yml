@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.ascend_p_school
+    - profile.type.adviser
+id: profile.adviser.ascend_p_school
+field_name: ascend_p_school
+entity_type: profile
+bundle: adviser
+label: 'Focus school'
+description: 'If you are advising at multiple settings (schools), here you can select the setting that you are focusing on currently. '
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:school'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+field_type: entity_reference

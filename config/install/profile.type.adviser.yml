@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies: {  }
+id: adviser
+label: Adviser
+display_label: 'Focus school'
+multiple: false
+registration: false
+roles:
+  adviser: adviser
+allow_revisions: false
+new_revision: false
