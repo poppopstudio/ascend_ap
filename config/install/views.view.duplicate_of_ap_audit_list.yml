@@ -507,12 +507,14 @@ display:
           expose:
             operator: ''
       style:
-        type: default
+        type: html_list
         options:
           grouping: {  }
           row_class: ''
           default_row_class: true
-          uses_fields: false
+          type: ul
+          wrapper_class: item-list
+          class: ''
       row:
         type: fields
         options:
