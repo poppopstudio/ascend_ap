@@ -7,25 +7,30 @@ dependencies:
   - ascend_audit:ascend_audit
   - comment:comment
   - comment_notify:comment_notify
-  # Comment module & config is handled by ascend_audit (centralised contrib).
+  # Comment modules' install is handled by ascend_audit (centralised contrib).
 
 config_devel:
+  - comment.type.ap_comment.yml
   - core.base_field_override.ap.ap.category
   - core.entity_form_display.ap.ap.default
   - core.entity_form_display.ap.ap.auditor
+  - core.entity_form_display.comment.ap_comment.default.yml
   - core.entity_form_display.profile.adviser.default
   - core.entity_form_mode.ap.auditor
   - core.entity_view_display.ap.ap.default
+  - core.entity_view_display.comment.ap_comment.default.yml
   - core.entity_view_display.profile.adviser.default
   - field.field.ap.ap.ascend_ap_ap
   - field.field.ap.ap.ascend_ap_comments
   - field.field.ap.ap.ascend_ap_fas
   - field.field.ap.ap.ascend_ap_mfs
+  - field.field.comment.ap_comment.ascend_comment_body.yml
   - field.field.profile.adviser.ascend_p_school
   - field.storage.ap.ascend_ap_ap
   - field.storage.ap.ascend_ap_comments
   - field.storage.ap.ascend_ap_fas
   - field.storage.ap.ascend_ap_mfs
+  - field.storage.comment.ascend_comment_body.yml
   - profile.type.adviser
   - system.action.user_add_role_action.adviser
   - system.action.user_remove_role_action.adviser
