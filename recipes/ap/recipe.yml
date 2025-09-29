@@ -25,3 +25,6 @@ config:
         - 'edit own comments'
         - 'post comments'
         - 'skip comment approval'
+    user.role.user_manager:
+      grantPermissions:
+      - 'assign adviser role'
