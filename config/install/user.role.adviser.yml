@@ -5,6 +5,7 @@ dependencies:
     - ascend_ap
     - ascend_school
     - comment
+    - comment_notify
     - profile
     - system
     - toolbar
@@ -19,6 +20,7 @@ permissions:
   - 'edit own comments'
   - 'post comments'
   - 'skip comment approval'
+  - 'subscribe to comments'
   - 'update own adviser profile'
   - 'view ap'
   - 'view own adviser profile'
