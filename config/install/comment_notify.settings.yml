@@ -2,9 +2,9 @@ bundle_types:
   - ap--ap--ascend_ap_comments
 available_alerts:
   1: true
-  2: true
+  2: false
 enable_default:
-  watcher: '0'
+  watcher: '1'
   entity_author: true
 mail_templates:
   watcher:
