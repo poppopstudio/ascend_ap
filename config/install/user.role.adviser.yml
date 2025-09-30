@@ -11,7 +11,7 @@ dependencies:
     - toolbar
 id: adviser
 label: Adviser
-weight: 7
+weight: 10
 is_admin: null
 permissions:
   - 'access comments'
