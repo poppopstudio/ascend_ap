@@ -10,6 +10,7 @@ dependencies:
   # Comment modules' install is handled by ascend_audit (centralised contrib).
 
 config_devel:
+  - comment_notify.settings
   - comment.settings
   - comment.type.ap_comment
   - core.base_field_override.ap.ap.category
