@@ -511,7 +511,7 @@ display:
               sortable: false
               default_sort_order: asc
               align: ''
-              separator: ''
+              separator: '&nbsp;'
               empty_column: false
               responsive: ''
             form_mode_edit_link:
