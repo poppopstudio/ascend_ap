@@ -6,16 +6,17 @@ dependencies:
     - ascend_school
     - comment
     - comment_notify
+    - contextual
     - profile
     - system
-    - toolbar
 id: adviser
 label: Adviser
 weight: 10
 is_admin: null
 permissions:
+  - 'access administration pages'
   - 'access comments'
-  - 'access toolbar'
+  - 'access contextual links'
   - 'create adviser profile'
   - 'edit own comments'
   - 'post comments'
