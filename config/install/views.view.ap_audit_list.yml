@@ -2,10 +2,14 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.audit.ascend_aud_evidence
+    - field.storage.audit.ascend_aud_forward
+    - field.storage.audit.ascend_aud_rating
     - user.role.auditor
   module:
     - ascend_audit
     - taxonomy
+    - text
     - user
 id: ap_audit_list
 label: 'AP Audit list'
@@ -142,6 +146,193 @@ display:
           separator: ', '
           field_api_classes: false
           convert_spaces: false
+        ascend_aud_rating:
+          id: ascend_aud_rating
+          table: audit__ascend_aud_rating
+          field: ascend_aud_rating
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: Rating
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: true
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: span
+          element_class: ''
+          element_label_type: span
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        ascend_aud_evidence:
+          id: ascend_aud_evidence
+          table: audit__ascend_aud_evidence
+          field: ascend_aud_evidence
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: Evidence
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: true
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: span
+          element_class: ''
+          element_label_type: span
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: text_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        ascend_aud_forward:
+          id: ascend_aud_forward
+          table: audit__ascend_aud_forward
+          field: ascend_aud_forward
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Moving forward'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: true
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: span
+          element_class: ''
+          element_label_type: span
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: text_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
       pager:
         type: none
         options:
@@ -316,12 +507,14 @@ display:
           expose:
             operator: ''
       style:
-        type: default
+        type: html_list
         options:
           grouping: {  }
           row_class: ''
           default_row_class: true
-          uses_fields: false
+          type: ul
+          wrapper_class: item-list
+          class: ''
       row:
         type: fields
         options:
@@ -359,7 +552,10 @@ display:
         - 'languages:language_interface'
         - url
         - user.roles
-      tags: {  }
+      tags:
+        - 'config:field.storage.audit.ascend_aud_evidence'
+        - 'config:field.storage.audit.ascend_aud_forward'
+        - 'config:field.storage.audit.ascend_aud_rating'
   embed_1:
     id: embed_1
     display_title: Embed
@@ -374,4 +570,7 @@ display:
         - 'languages:language_interface'
         - url
         - user.roles
-      tags: {  }
+      tags:
+        - 'config:field.storage.audit.ascend_aud_evidence'
+        - 'config:field.storage.audit.ascend_aud_forward'
+        - 'config:field.storage.audit.ascend_aud_rating'

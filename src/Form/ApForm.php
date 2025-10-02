@@ -112,8 +112,7 @@ class ApForm extends ContentEntityForm {
     $form['ap_audit_list']['details'] = [
       '#type' => 'container',
       // Could we be passing relevant year in here to make more relevant? (Y)
-      // 'view' => views_embed_view('ap_audit_list', 'embed_1', $details_category),
-      'view' => views_embed_view('duplicate_of_ap_audit_list', 'embed_1', $details_category),
+      'view' => views_embed_view('ap_audit_list', 'embed_1', $details_category),
       '#wrapper_attributes' => ['class' => ['entity-meta__title']],
     ];
 

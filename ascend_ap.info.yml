@@ -38,6 +38,5 @@ config_devel:
   - system.action.user_remove_role_action.adviser
   - user.role.adviser
   - views.view.ap_audit_list
-  - views.view.duplicate_of_ap_audit_list
   - views.view.ap_historic
   - views.view.action_plans
