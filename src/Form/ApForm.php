@@ -76,6 +76,31 @@ class ApForm extends ContentEntityForm {
     }
 
 
+    // Check the resource kit is installed - does this need DI?
+    if (\Drupal::service('module_handler')->moduleExists('ascend_resource')) {
+
+      // Add the related category info to the sidebar.
+      $category_term = \Drupal::entityTypeManager()
+        ->getStorage('taxonomy_term')
+        ->load($details_category);
+
+      $category_info = $category_term->get('ascend_info')->value ?? NULL;
+
+      $form['ap_cat_info'] = [
+        '#type' => 'details',
+        '#group' => 'advanced',
+        '#weight' => -15,
+        '#title' => $this->t('Category info'),
+        '#open' => FALSE,
+      ];
+      $form['ap_cat_info']['details'] = [
+        '#type' => 'item',
+        '#markup' => $category_info ?? $this->t('No information currently stored for this category.'),
+        '#attributes' => ['class' => ['entity-meta__title']],
+      ];
+    }
+
+
     // Add audit info to sidebar.
     $form['ap_audit_list'] = [
       '#type' => 'details',
@@ -107,31 +132,6 @@ class ApForm extends ContentEntityForm {
       'view' => views_embed_view('ap_historic', 'embed_1', $details_category),
       '#wrapper_attributes' => ['class' => ['entity-meta__title']],
     ];
-
-
-    // Check the resource kit is installed - does this need DI?
-    if (\Drupal::service('module_handler')->moduleExists('ascend_resource')) {
-
-      // Add the related category info to the sidebar.
-      $category_term = \Drupal::entityTypeManager()
-        ->getStorage('taxonomy_term')
-        ->load($details_category);
-
-      $category_info = $category_term->get('ascend_info')->value ?? NULL;
-
-      $form['ap_cat_info'] = [
-        '#type' => 'details',
-        '#group' => 'advanced',
-        '#weight' => 0,
-        '#title' => $this->t('Category info'),
-        '#open' => FALSE,
-      ];
-      $form['ap_cat_info']['details'] = [
-        '#type' => 'item',
-        '#markup' => $category_info ?? $this->t('No information currently stored for this category.'),
-        '#attributes' => ['class' => ['entity-meta__title']],
-      ];
-    }
 
     return $form;
   }
