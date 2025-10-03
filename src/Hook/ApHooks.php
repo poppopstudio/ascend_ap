@@ -21,4 +21,46 @@ class ApHooks {
     return;
   }
 
+  /**
+   * Implements hook_token_info().
+   */
+  #[Hook('token_info')]
+  public function tokenInfo() {
+    $types['ap'] = [
+      'name' => t('Action plan'),
+      'description' => t('Tokens for action plans.'),
+    ];
+
+    $tokens['school_year'] = [
+      'name' => t('School Year (YY)'),
+      'description' => t('Current school year in YY format (e.g. 24).'),
+    ];
+
+    return [
+      'types' => $types,
+      'tokens' => ['ap' => $tokens],
+    ];
+  }
+
+  /**
+   * Implements hook_tokens().
+   */
+  public function tokens($type, $tokens, array $data, array $options, BubbleableMetadata $bubbleable_metadata) {
+    $replacements = [];
+
+    if ($type == 'ap') {
+      $year = 25;
+
+      foreach ($tokens as $name => $original) {
+        switch ($name) {
+          case 'school_year':
+            $replacements[$original] = $year;
+            break;
+        }
+      }
+    }
+
+    return $replacements;
+  }
+
 }
