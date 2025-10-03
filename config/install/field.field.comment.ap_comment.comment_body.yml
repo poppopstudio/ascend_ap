@@ -3,12 +3,12 @@ status: true
 dependencies:
   config:
     - comment.type.ap_comment
-    - field.storage.comment.ascend_comment_body
+    - field.storage.comment.comment_body
     - filter.format.basic_html
   module:
     - text
-id: comment.ap_comment.ascend_comment_body
-field_name: ascend_comment_body
+id: comment.ap_comment.comment_body
+field_name: comment_body
 entity_type: comment
 bundle: ap_comment
 label: Comment
