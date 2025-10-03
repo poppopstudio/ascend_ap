@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - comment.type.ap_comment
-    - field.field.comment.ap_comment.ascend_comment_body
+    - field.field.comment.ap_comment.comment_body
   module:
     - text
 id: comment.ap_comment.default
@@ -11,18 +11,19 @@ targetEntityType: comment
 bundle: ap_comment
 mode: default
 content:
-  ascend_comment_body:
+  comment_body:
     type: text_textarea
-    weight: 1
+    weight: 0
     region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  author:
-    weight: 0
+  comment_notify_settings:
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
+  author: true
   subject: true

@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - comment.type.ap_comment
-    - field.field.comment.ap_comment.ascend_comment_body
+    - field.field.comment.ap_comment.comment_body
   module:
     - text
 id: comment.ap_comment.default
@@ -11,7 +11,7 @@ targetEntityType: comment
 bundle: ap_comment
 mode: default
 content:
-  ascend_comment_body:
+  comment_body:
     type: text_default
     label: visually_hidden
     settings: {  }
