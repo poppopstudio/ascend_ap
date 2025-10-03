@@ -8,7 +8,7 @@ id: profile.adviser.ascend_p_school
 field_name: ascend_p_school
 entity_type: profile
 bundle: adviser
-label: 'Focus school'
+label: 'Working school'
 description: 'If you are advising at multiple settings (schools), here you can select the setting that you are focusing on currently. '
 required: true
 translatable: false

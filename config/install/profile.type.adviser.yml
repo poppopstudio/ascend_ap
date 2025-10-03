@@ -3,7 +3,7 @@ status: true
 dependencies: {  }
 id: adviser
 label: Adviser
-display_label: 'Focus school'
+display_label: 'Working school'
 multiple: false
 registration: false
 roles:
