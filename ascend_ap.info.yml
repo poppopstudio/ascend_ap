@@ -39,4 +39,5 @@ config_devel:
   - user.role.adviser
   - views.view.ap_audit_list
   - views.view.ap_historic
+  - views.view.ap_summary_report
   - views.view.action_plans
