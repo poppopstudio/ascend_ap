@@ -6,11 +6,14 @@ dependencies:
     - field.storage.ap.ascend_ap_fas
     - field.storage.ap.ascend_ap_mfs
     - system.menu.main
+    - user.role.adviser
   module:
     - ascend_ap
     - ascend_audit
+    - entity_print_views
     - taxonomy
     - text
+    - user
 id: ap_summary_report
 label: 'Action plan summary'
 module: views
@@ -423,12 +426,27 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
-        type: none
-        options: {  }
+        type: role
+        options:
+          role:
+            adviser: adviser
       cache:
         type: tag
         options: {  }
-      empty: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: 'No action plans available for this school at this time.'
+            format: basic_html
+          tokenize: false
       sorts:
         weight:
           id: weight
@@ -557,7 +575,20 @@ display:
           entity_field: category
           plugin_id: standard
           required: true
-      header: {  }
+      header:
+        area_entity_print_views:
+          id: area_entity_print_views
+          table: views
+          field: area_entity_print_views
+          relationship: none
+          group_type: group
+          admin_label: 'Print/save as PDF link'
+          plugin_id: entity_print_views_link
+          empty: false
+          export_type: pdf
+          link_text: 'View PDF'
+          css_class: ''
+          display_id: page_1
       footer:
         area:
           id: area
@@ -579,6 +610,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - user.roles
       tags:
         - 'config:field.storage.ap.ascend_ap_ap'
         - 'config:field.storage.ap.ascend_ap_fas'
@@ -589,7 +621,7 @@ display:
     display_plugin: page
     position: 1
     display_options:
-      display_description: ''
+      display_description: 'Show all APs for a school/year in a digest format with printable option'
       display_extenders: {  }
       path: ap-summary-report
       menu:
@@ -603,6 +635,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - user.roles
       tags:
         - 'config:field.storage.ap.ascend_ap_ap'
         - 'config:field.storage.ap.ascend_ap_fas'
