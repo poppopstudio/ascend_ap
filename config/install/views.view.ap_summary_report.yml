@@ -600,7 +600,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: 'Report issued by [site:name] ([site:mail]) on [current-date:long] '
+            value: 'Issued by [site:name] ([site:mail]) on [current-date:med] '
             format: basic_html
           tokenize: false
       display_extenders: {  }
