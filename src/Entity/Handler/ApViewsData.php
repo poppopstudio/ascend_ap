@@ -15,12 +15,8 @@ class ApViewsData extends EntityViewsData {
     $data = parent::getViewsData();
 
     // Add the filter for "AP has category".
-    $data['ap']['category']['group'] = $this->t('Action plan');
-    $data['ap']['category']['title'] = $this->t('Action plan has category');
-    $data['ap']['category']['help'] = $this->t('Action plan has the selected category terms.');
-
     $data['ap']['category']['filter'] = [
-      'title' => $this->t('AP has category'),
+      'title' => $this->t('Action plan has category'),
       'id' => 'taxonomy_index_tid',
       'field' => 'category',
       'numeric' => TRUE,
