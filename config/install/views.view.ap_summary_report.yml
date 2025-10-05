@@ -28,7 +28,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Action plan summary for {{ school }} {{ year }}'
+      title: 'Action plan summary report'
       fields:
         school:
           id: school
@@ -582,13 +582,26 @@ display:
           field: area_entity_print_views
           relationship: none
           group_type: group
-          admin_label: 'Print/save as PDF link'
+          admin_label: 'Save as PDF link'
           plugin_id: entity_print_views_link
           empty: false
           export_type: pdf
-          link_text: 'View PDF'
+          link_text: 'Save as PDF'
           css_class: ''
           display_id: page_1
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: "Replacement header (doesn't show otherwise)"
+          plugin_id: text
+          empty: false
+          content:
+            value: "<h1>Action plan summary report</h1>\r\nAnnual summary report for {{ school }} {{ year }}"
+            format: full_html
+          tokenize: true
       footer:
         area:
           id: area
