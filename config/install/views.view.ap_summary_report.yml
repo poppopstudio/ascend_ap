@@ -198,7 +198,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: h2
+          element_type: h3
           element_class: ''
           element_label_type: ''
           element_label_class: ''
@@ -261,7 +261,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
+          element_type: p
           element_class: ''
           element_label_type: ''
           element_label_class: ''
@@ -323,7 +323,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
+          element_type: p
           element_class: ''
           element_label_type: ''
           element_label_class: ''
@@ -385,7 +385,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
+          element_type: p
           element_class: ''
           element_label_type: ''
           element_label_class: ''
@@ -444,7 +444,7 @@ display:
           plugin_id: text
           empty: true
           content:
-            value: 'No action plans available for this school at this time.'
+            value: 'No action plans currently available for this school.'
             format: basic_html
           tokenize: false
       sorts:
@@ -599,23 +599,10 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: "<h1>Action plan summary report</h1>\r\nAnnual summary report for {{ school }} {{ year }}"
-            format: full_html
-          tokenize: true
-      footer:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text
-          empty: false
-          content:
-            value: 'Issued by [site:name] ([site:mail]) on [current-date:medium] '
+            value: "<h2>Summary report for {{ school }} {{ year }}</h2>\r\n<h6>Issued by [site:name] on [current-date:medium] (Refer to: [site:mail])</h6>"
             format: basic_html
-          tokenize: false
+          tokenize: true
+      footer: {  }
       display_extenders: {  }
     cache_metadata:
       max-age: -1
