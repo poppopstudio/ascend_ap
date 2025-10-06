@@ -22,6 +22,7 @@ config_devel:
   - core.entity_view_display.ap.ap.default
   - core.entity_view_display.comment.ap_comment.default
   - core.entity_view_display.profile.adviser.default
+  - entity_print.settings
   - field.field.ap.ap.ascend_ap_ap
   - field.field.ap.ap.ascend_ap_comments
   - field.field.ap.ap.ascend_ap_fas
