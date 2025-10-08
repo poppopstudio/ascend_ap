@@ -174,7 +174,7 @@ display:
           plugin_id: text
           empty: true
           content:
-            value: 'No action plans available yet.'
+            value: 'No action plans currently available for this category.'
             format: basic_html
           tokenize: false
       sorts: {  }
