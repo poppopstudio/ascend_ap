@@ -248,7 +248,7 @@ class Ap extends EditorialContentEntityBase implements ApInterface {
     $school_id = $this->get('school')->target_id ?? 'X';
     $year = $this->get('year')->value ?? 'X';
 
-    return "AP:s{$school_id}.c{$category_id}.y{$year}";
+    return "ap:c{$category_id}.s{$school_id}.y{$year}";
   }
 
 }
