@@ -14,6 +14,15 @@ class ApViewsData extends EntityViewsData {
   public function getViewsData() {
     $data = parent::getViewsData();
 
+    // Fetch a computed value for the title/label/whatever.
+    $data['ap']['computed_label'] = [
+      'title' => $this->t('Action Plan Label'),
+      'help' => $this->t('The computed label (ap:sX.cX.yX)'),
+      'field' => [
+        'id' => 'ap_computed_label',
+      ],
+    ];
+
     // Add the filter for "AP has category".
     $data['ap']['category']['filter'] = [
       'title' => $this->t('Action plan has category'),
