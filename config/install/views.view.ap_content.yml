@@ -697,8 +697,8 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
-          reset_button: false
+          submit_button: Filter
+          reset_button: true
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
@@ -715,6 +715,61 @@ display:
       sorts: {  }
       arguments: {  }
       filters:
+        ap_id:
+          id: ap_id
+          table: ap
+          field: ap_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: ap
+          entity_field: ap_id
+          plugin_id: numeric
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: ap_id_op
+            label: ID
+            description: ''
+            use_operator: false
+            operator: ap_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ap_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              site_manager: '0'
+              user_manager: '0'
+              audit_manager: '0'
+              auditor: '0'
+              resource_manager: '0'
+              adviser: '0'
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
         status:
           id: status
           table: ap
@@ -763,6 +818,10 @@ display:
                 title: Unpublished
                 operator: '='
                 value: '0'
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       style:
         type: table
         options:
@@ -795,35 +854,35 @@ display:
               empty_column: false
               responsive: ''
             computed_label:
-              sortable: true
+              sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
             category:
-              sortable: true
+              sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
             school:
-              sortable: true
+              sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
             year:
-              sortable: true
+              sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
             uid:
-              sortable: true
+              sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
