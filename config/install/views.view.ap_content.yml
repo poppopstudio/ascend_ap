@@ -7,7 +7,7 @@ dependencies:
     - user
     - views_bulk_operations
 id: ap_content
-label: 'Action plans'
+label: 'Action plans content'
 module: views
 description: 'Content view of APs to override the basic one provided by the module.'
 tag: ''
