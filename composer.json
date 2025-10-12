@@ -1,7 +1,7 @@
 {
     "name": "poppopstudio/ascend_ap",
     "description": "Ascend project action plan kit",
-    "type": "drupal-custom-module",
+    "type": "drupal-module",
     "license": "proprietary",
     "authors": [
         {
