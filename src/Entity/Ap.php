@@ -145,6 +145,16 @@ class Ap extends EditorialContentEntityBase implements ApInterface {
       ->setDisplayConfigurable('view', TRUE)
       ->setDisplayConfigurable('form', TRUE);
 
+    $fields['path'] = BaseFieldDefinition::create('path')
+      ->setLabel(t('URL alias'))
+      ->setTranslatable(TRUE)
+      ->setDisplayOptions('form', [
+        'type' => 'path',
+        'weight' => 30,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setComputed(TRUE);
+
     $fields['category'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t("Category"))
       ->setDescription(t("The focus area for this action plan."))
