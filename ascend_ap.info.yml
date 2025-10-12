@@ -34,6 +34,7 @@ config_devel:
   - field.storage.ap.ascend_ap_fas
   - field.storage.ap.ascend_ap_mfs
   - field.storage.comment.comment_body
+  - pathauto.pattern.ap
   - profile.type.adviser
   - system.action.user_add_role_action.adviser
   - system.action.user_remove_role_action.adviser

@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ascend_ap
+id: ap
+label: 'Action plan'
+type: ap
+pattern: 'ap/[ap:category:target_id]/[ap:school:target_id]/[ap:year:value]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }
