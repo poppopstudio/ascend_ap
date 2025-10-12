@@ -9,7 +9,7 @@ use Drupal\pathauto\Plugin\pathauto\AliasType\EntityAliasTypeBase;
  *
  * @AliasType(
  *   id = "ap",
- *   label = @Translation("Action Plan"),
+ *   label = @Translation("Action plan"),
  *   types = {"ap"},
  *   provider = "ascend_ap",
  *   context_definitions = {

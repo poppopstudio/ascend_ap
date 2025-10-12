@@ -21,7 +21,7 @@ third_party_settings:
       label: 'Authoring information'
       region: hidden
       parent_name: ''
-      weight: 8
+      weight: 10
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -105,5 +105,6 @@ hidden:
   ascend_ap_comments: true
   changed: true
   created: true
+  path: true
   status: true
   uid: true
