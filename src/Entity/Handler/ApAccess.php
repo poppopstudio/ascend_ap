@@ -63,33 +63,4 @@ class ApAccess extends EntityAccessControlHandler {
     return parent::checkAccess($entity, $operation, $account);
   }
 
-  //
-  // This function would be identical if left, should we call the audit version from the above functions??
-  //
-
-  /**
-   * Check if auditor is linked to the school on the audit entity.
-   */
-  // protected function checkAuditorSchoolLink(EntityInterface $entity, AccountInterface $account) {
-
-  //   // Get the school ID from the audit entity.
-  //   $audit_school_id = $entity->get('school')->target_id;
-
-  //   if (!$audit_school_id) {
-  //     return FALSE; // No school set on audit, deny access.
-  //   }
-
-  //   // Load the audit's school.
-  //   $audit_school = \Drupal::entityTypeManager()
-  //     ->getStorage('school')
-  //     ->load($audit_school_id);
-
-  //   if (empty($audit_school)) {
-  //     return FALSE; // No school set, deny access.
-  //   }
-
-  //   $school_auditor = $audit_school->get('ascend_sch_auditor')->target_id;
-  //   return ($school_auditor == $account->id());
-  // }
-  
 }

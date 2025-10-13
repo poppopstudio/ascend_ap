@@ -21,35 +21,6 @@ function ascend_ap_form_alter(&$form, FormStateInterface $form_state, $form_id) 
   \Drupal::service(ApHooks::class)->formAlter($form, $form_state, $form_id);
 }
 
-/**
- * Legacy hook implementation.
- *
- * @todo Remove this method when support for Drupal core < 11.1 is dropped.
- */
-// #[LegacyHook]
-// function ascend_ap_config_pages_insert(EntityInterface $entity) {
-//   \Drupal::service(ApHooks::class)->configPagesInsert($entity);
-// }
-
-/**
- * Legacy hook implementation.
- *
- * @todo Remove this method when support for Drupal core < 11.1 is dropped.
- */
-// #[LegacyHook]
-// function ascend_ap_config_pages_update(EntityInterface $entity) {
-//   \Drupal::service(ApHooks::class)->configPagesUpdate($entity);
-// }
-
-/**
- * Legacy hook implementation.
- *
- * @todo Remove this method when support for Drupal core < 11.1 is dropped.
- */
-// #[LegacyHook]
-// function ascend_ap_entity_type_alter(array &$entity_types) {
-//   \Drupal::service(ApHooks::class)->userAlter($entity_types);
-// }
 
 /**
  * These two functions were required in order to add compatibility with
