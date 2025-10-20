@@ -444,7 +444,7 @@ display:
           plugin_id: text
           empty: true
           content:
-            value: 'No action plans currently available for this school.'
+            value: 'No completed action plans currently available for this school.'
             format: basic_html
           tokenize: false
       sorts:
