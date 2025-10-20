@@ -53,7 +53,7 @@ class ApForm extends ContentEntityForm {
     $form['meta']['author'] = [
       '#type' => 'item',
       '#title' => $this->t('Author'),
-      '#markup' => $ap->getOwner()->getAccountName(),
+      '#markup' => $ap->getOwner()?->getAccountName() ?? 'n/a!',
       '#wrapper_attributes' => ['class' => ['entity-meta__author']],
     ];
 
