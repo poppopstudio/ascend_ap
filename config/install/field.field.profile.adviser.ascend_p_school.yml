@@ -9,7 +9,7 @@ field_name: ascend_p_school
 entity_type: profile
 bundle: adviser
 label: 'Working school'
-description: 'If you are advising at multiple settings (schools), here you can select the setting that you are focusing on currently. '
+description: 'If you are advising at multiple settings (schools), here you can select the setting that you are focusing on currently.\r\n\r\nStart typing the name of a setting to make a list of corresponding entries appear, then select from the dropdown list.'
 required: true
 translatable: false
 default_value: {  }
