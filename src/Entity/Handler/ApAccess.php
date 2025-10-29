@@ -2,13 +2,15 @@
 
 namespace Drupal\ascend_ap\Entity\Handler;
 
-use Drupal\ascend_audit\Entity\Handler\AuditAccess;
+use Drupal\ascend_audit\Entity\Handler\AuditorSchoolLinkTrait;
 use Drupal\entity\EntityAccessControlHandler;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Access\AccessResult;
 
 class ApAccess extends EntityAccessControlHandler {
+
+  use AuditorSchoolLinkTrait;
 
   /**
    * {@inheritdoc}
@@ -27,7 +29,7 @@ class ApAccess extends EntityAccessControlHandler {
       if (in_array('auditor', $account->getRoles())) {
 
         // Check (below) if user has working access to the school.
-        $auditor_linked = AuditAccess::checkAuditorSchoolLink($entity, $account);
+        $auditor_linked = $this->isAuditorSchoolLink($entity, $account);
 
         if (!$auditor_linked) {
           return AccessResult::forbidden()
