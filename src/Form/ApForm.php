@@ -46,7 +46,6 @@ class ApForm extends ContentEntityForm {
     $form['meta']['changed'] = [
       '#type' => 'item',
       '#title' => $this->t('Last saved'),
-      // '#markup' => !$ap->isNew() ? $this->dateFormatter->format($ap->getChangedTime(), 'short') : $this->t('Not saved yet'),
       '#markup' => !$ap->isNew() ? \Drupal::service('date.formatter')->format($ap->getChangedTime(), 'short') : $this->t('Not saved yet'),
       '#wrapper_attributes' => ['class' => ['entity-meta__last-saved']],
     ];
@@ -111,7 +110,6 @@ class ApForm extends ContentEntityForm {
     ];
     $form['ap_audit_list']['details'] = [
       '#type' => 'container',
-      // Could we be passing relevant year in here to make more relevant? (Y)
       'view' => views_embed_view('ap_audit_list', 'embed_1', $details_category),
       '#wrapper_attributes' => ['class' => ['entity-meta__title']],
     ];
@@ -124,7 +122,6 @@ class ApForm extends ContentEntityForm {
       '#weight' => -5,
       '#title' => $this->t("Historic action plans"),
       '#open' => FALSE,
-      // '#access' => $is_auditor, // Alt. individual access approach.
     ];
     $form['ap_historic']['details'] = [
       '#type' => 'container',

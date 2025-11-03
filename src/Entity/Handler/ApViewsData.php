@@ -34,7 +34,7 @@ class ApViewsData extends EntityViewsData {
 
     // Add the relationship for "AP has category".
     $data['ap']['category']['relationship'] = [
-      'title' => $this->t('Action plan has category'), // is this right??
+      'title' => $this->t('Action plan has category'),
       'help' => $this->t('Category referenced by action plan.'),
       'id' => 'standard',
       'base' => 'taxonomy_term_field_data',
