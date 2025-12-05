@@ -6,10 +6,12 @@
  */
 
 use Drupal\ascend_ap\Hook\ApHooks;
+use Drupal\Core\Entity\Entity\EntityViewDisplay;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Hook\LegacyHook;
 use Drupal\Core\Render\Element;
+
 
 /**
  * Legacy hook implementation.
@@ -19,6 +21,17 @@ use Drupal\Core\Render\Element;
 #[LegacyHook]
 function ascend_ap_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   \Drupal::service(ApHooks::class)->formAlter($form, $form_state, $form_id);
+}
+
+
+/**
+ * Legacy hook implementation.
+ *
+ * @todo Remove this method when support for Drupal core < 11.1 is dropped.
+ */
+#[LegacyHook]
+function ascend_ap_entity_view_alter(array &$build, EntityInterface $entity, EntityViewDisplay $display) {
+  \Drupal::service(ApHooks::class)->entityViewAlter($build, $entity, $display);
 }
 
 
