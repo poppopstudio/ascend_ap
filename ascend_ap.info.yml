@@ -6,12 +6,9 @@ core_version_requirement: ^10 || ^11
 dependencies:
   - ascend_audit:ascend_audit
   - comment:comment
-  - comment_notify:comment_notify
-  # Comment modules' install is handled by ascend_audit (centralised contrib).
+  # Comment's install is handled by ascend_audit, keeps them all inside recipes.
 
 config_devel:
-  - comment_notify.settings
-  - comment.settings
   - comment.type.ap_comment
   - core.base_field_override.ap.ap.category
   - core.entity_form_display.ap.ap.default

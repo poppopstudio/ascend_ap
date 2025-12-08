@@ -5,7 +5,6 @@ dependencies:
     - ascend_ap
     - ascend_school
     - comment
-    - comment_notify
     - contextual
     - entity_print_views
     - profile
@@ -23,7 +22,6 @@ permissions:
   - 'entity print views access'
   - 'post comments'
   - 'skip comment approval'
-  - 'subscribe to comments'
   - 'update own adviser profile'
   - 'view ap'
   - 'view own adviser profile'
