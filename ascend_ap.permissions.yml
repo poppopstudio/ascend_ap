@@ -6,10 +6,10 @@ view own ap:
   title: View own action plans
 
 view ap revisions:
-  title: 'View Action plan revisions'
+  title: 'View action plan revisions'
 
 revert ap revisions:
-  title: 'Revert Action plan revisions'
+  title: 'Revert action plan revisions'
 
 delete ap revisions:
-  title: 'Delete Action plan revisions'
+  title: 'Delete action plan revisions'
