@@ -103,7 +103,7 @@ class ApForm extends ContentEntityForm {
         '#type' => 'details',
         '#group' => 'advanced',
         '#weight' => -15,
-        '#title' => $this->t('Category info'),
+        '#title' => $this->t('Best practice recommendations'),
         '#open' => FALSE,
       ];
       $form['ap_cat_info']['details'] = [
