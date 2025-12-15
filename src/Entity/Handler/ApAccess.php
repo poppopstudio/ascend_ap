@@ -17,6 +17,22 @@ class ApAccess extends EntityAccessControlHandler {
    */
   protected function checkAccess(EntityInterface $entity, $operation, AccountInterface $account) {
 
+    // Handle revision operations.
+    if (in_array($operation, ['view revision', 'view all revisions'])) {
+      return AccessResult::allowedIfHasPermission($account, 'view ap revisions')
+        ->cachePerPermissions();
+    }
+
+    if (in_array($operation, ['revert', 'revert revision'])) {
+      return AccessResult::allowedIfHasPermission($account, 'revert ap revisions')
+        ->cachePerPermissions();
+    }
+
+    if ($operation === 'delete revision') {
+      return AccessResult::allowedIfHasPermission($account, 'delete ap revisions')
+        ->cachePerPermissions();
+    }
+
     // Check operations that require school-based access control
     if (in_array($operation, ['view', 'update'])) {
 

@@ -4,3 +4,12 @@ administer ap entities:
 
 view own ap:
   title: View own action plans
+
+view ap revisions:
+  title: 'View Action plan revisions'
+
+revert ap revisions:
+  title: 'Revert Action plan revisions'
+
+delete ap revisions:
+  title: 'Delete Action plan revisions'
