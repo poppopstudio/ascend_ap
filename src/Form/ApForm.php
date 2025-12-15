@@ -20,9 +20,6 @@ class ApForm extends ContentEntityForm {
     $ap = $this->entity;
 
     if (isset($form['revision'])) {
-      // Revision toggle -> on by default (see also: AP::getNewRevisionDefault).
-      $form['revision']['#default_value'] = TRUE;
-
       // Hide the revision checkbox for restricted roles.
       $restricted_roles = ['auditor', 'adviser',];
 
@@ -147,6 +144,13 @@ class ApForm extends ContentEntityForm {
     ];
 
     return $form;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function getNewRevisionDefault() {
+    return TRUE;
   }
 
   /**

@@ -36,8 +36,13 @@ class ApAccess extends EntityAccessControlHandler {
     // Check operations that require school-based access control
     if (in_array($operation, ['view', 'update'])) {
 
+      $permission = match($operation) {
+        'view' => 'view ap',
+        'update' => 'update any ap',
+      };
+
       // Global permissions first.
-      if ($account->hasPermission($operation . ' ap')) {
+      if ($account->hasPermission($permission)) {
         return AccessResult::allowed()->cachePerPermissions();
       }
 

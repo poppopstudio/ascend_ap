@@ -7,9 +7,7 @@ view own ap:
 
 view ap revisions:
   title: 'View action plan revisions'
-
 revert ap revisions:
   title: 'Revert action plan revisions'
-
 delete ap revisions:
   title: 'Delete action plan revisions'
