@@ -251,6 +251,13 @@ class Ap extends EditorialContentEntityBase implements ApInterface {
   }
 
   /**
+   * {@inheritdoc}
+   */
+  protected function getNewRevisionDefault() {
+    return TRUE;
+  }
+
+  /**
    * Use a computed label instead of storing titles.
    */
   public function label() {

@@ -19,6 +19,23 @@ class ApForm extends ContentEntityForm {
     /** @var \Drupal\ascend_ap\Entity\Ap $ap */
     $ap = $this->entity;
 
+    if (isset($form['revision'])) {
+      // Revision toggle -> on by default (see also: AP::getNewRevisionDefault).
+      $form['revision']['#default_value'] = TRUE;
+
+      // Hide the revision checkbox for restricted roles.
+      $restricted_roles = ['auditor', 'adviser',];
+
+      $current_user = \Drupal::currentUser();
+
+      foreach ($restricted_roles as $role) {
+        if ($current_user->hasRole($role)) {
+          $form['revision']['#access'] = FALSE;
+          break;
+        }
+      }
+    }
+
     if ($this->operation == 'edit') {
       $form['#title'] = $this->t('<em>Edit @type</em> @title', [
         '@type' => 'ap',
